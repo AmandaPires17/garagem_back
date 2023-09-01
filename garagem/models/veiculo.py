@@ -14,6 +14,7 @@ class Veiculo(models.Model):
     ano = models.IntegerField(default=0, null=True, blank=True)
     preco = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=True, blank=True)
     # modelo = models.CharField(max_length=50)
+    descricao = models.CharField(max_length=100)
     acessorio = models.ManyToManyField(Acessorio, related_name="veículos")
     capa = models.ManyToManyField(
         Image,
@@ -21,7 +22,7 @@ class Veiculo(models.Model):
     )
 
     def __str__(self):
-        return f"Modelo: {self.modelo} (Cor: {self.cor} - Ano: {self.ano} )"
+        return f"Modelo: {self.modelo} (Cor: {self.cor} - Ano: {self.ano})"
 
     class Meta:
         verbose_name = "veículo"
