@@ -23,12 +23,12 @@ from uploader.router import router as uploader_router
 from usuario.router import router as usuario_router
 
 router = DefaultRouter()
-router.register(r"marcas", MarcaViewSet)
+router.register(r"acessorios", AcessorioViewSet)
 router.register(r"categorias", CategoriaViewSet)
 router.register(r"cores", CorViewSet)
-router.register(r"acessórios", AcessorioViewSet)
-router.register(r"veículos", VeiculoViewSet)
+router.register(r"marcas", MarcaViewSet)
 router.register(r"modelos", ModeloViewSet)
+router.register(r"veiculos", VeiculoViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
